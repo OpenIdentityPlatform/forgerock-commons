@@ -71,6 +71,5 @@
     <module>xcite-maven-plugin</module>
     <module>launcher</module>
     <module>httpdump</module>
-    <module>geo</module>
   </modules>
 </project>

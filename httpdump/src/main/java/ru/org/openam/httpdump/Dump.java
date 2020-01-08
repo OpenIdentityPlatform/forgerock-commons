@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ru.org.openam.geo.Client;
-
 public class Dump {
 	final static Logger logger = LoggerFactory.getLogger(Dump.class.getName());
 	
@@ -22,9 +20,8 @@ public class Dump {
 	public static String toString(HttpServletRequest request) {
 		try{
 			BufferedRequestWrapper requestWithBody=(BufferedRequestWrapper)request.getAttribute(BufferedRequestWrapper.class.getName());
-			return MessageFormat.format("{0}: {1} {2}?{3} {4} Params: {5} {6}", 
+			return MessageFormat.format("{0}: {1}?{2} {3} Params: {4} {5}", 
 					new Object[]{
-						Client.get(request),
 						request.getMethod(),
 						request.getAttribute("javax.servlet.forward.request_uri")==null?request.getRequestURI():(String)request.getAttribute("javax.servlet.forward.request_uri"),
 						request.getQueryString(),
